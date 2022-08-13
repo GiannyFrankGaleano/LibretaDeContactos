@@ -23,40 +23,37 @@ public class arrayBidimensional {
                     posicionGuardar = Integer.parseInt(JOptionPane.showInputDialog("ingrese la posicion a guardar"));
 
                     if (posicionGuardar < 0 || posicionGuardar > 4) {
-                    JOptionPane.showMessageDialog(null,"la posicion seleccionada no es valida");
+                        JOptionPane.showMessageDialog(null, "la posicion seleccionada no es valida");
 
-                    }else if (libreta[posicionGuardar][0] != null){
-                    sobreescribir= JOptionPane.showInputDialog(null,"en la posicion seleccionada se encuentran datos existentes, desea sobreescrbir?\n s-si\n n-no");
+                    } else if (libreta[posicionGuardar][0] != null) {
+                        sobreescribir = JOptionPane.showInputDialog(null, "en la posicion seleccionada se encuentran datos existentes, desea sobreescrbir?\n s-si\n n-no");
 
-                    if (sobreescribir.equals("s")){
+                        if (sobreescribir.equals("s")) {
+                            libreta[posicionGuardar][0] = nombre;
+                            libreta[posicionGuardar][1] = telefono;
+                            libreta[posicionGuardar][2] = direccion;
+                            JOptionPane.showMessageDialog(null, "Se sobreescribio el contacto correctamente en la posicion  " + posicionGuardar);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "no se realizo ningun cambio");
+                        }
+
+                    } else {
+
                         libreta[posicionGuardar][0] = nombre;
                         libreta[posicionGuardar][1] = telefono;
                         libreta[posicionGuardar][2] = direccion;
-                        JOptionPane.showMessageDialog(null,"Se sobreescribio el contacto correctamente en la posicion  "+posicionGuardar);
-                    }else{
-                        JOptionPane.showMessageDialog(null,"no se realizo ningun cambio");
-                    }
 
-                }
-                    else{
-
-                        libreta[posicionGuardar][0] = nombre;
-                        libreta[posicionGuardar][1] = telefono;
-                        libreta[posicionGuardar][2] = direccion;
-
-                        JOptionPane.showMessageDialog(null,"El contacto se guardo en la posicion "+posicionGuardar);
+                        JOptionPane.showMessageDialog(null, "El contacto se guardo en la posicion " + posicionGuardar);
 
                     }
-
-
 
 
                     break;
                 case "2":
                     posicionConsultar = Integer.parseInt(JOptionPane.showInputDialog("ingrese la posicion a consultar"));
-                    if (posicionConsultar < 0 || posicionConsultar > 4){
-                        JOptionPane.showMessageDialog(null,"La posicion seleccionada no es valida");
-                    }else {
+                    if (posicionConsultar < 0 || posicionConsultar > 4) {
+                        JOptionPane.showMessageDialog(null, "La posicion seleccionada no es valida");
+                    } else {
                         if (libreta[posicionConsultar][0] == null) {
                             JOptionPane.showMessageDialog(null, "No se ha encontrado ningun contacto guardado");
                         } else {
